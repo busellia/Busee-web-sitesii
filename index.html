@@ -4,271 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Buse</title>
+<meta name="description" content="Busenur Doğan - Sosyal hizmet öğrencisi. Sevdiğim şeyler, hakkımda ve iletişim.">
+<meta name="author" content="Busenur Doğan">
+<meta name="theme-color" content="#9b6fd6">
+<meta property="og:title" content="Busenur Doğan">
+<meta property="og:description" content="Sevdiğim şeyleri paylaştığım küçük dünyam.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --bg: #fbf8fc;
-  --surface: #ffffff;
-  --text: #2f2833;
-  --muted: #6f6475;
-  --accent: #9b6fd6;
-  --accent-2: #e98bb8;
-  --soft: #f3ecf8;
-  --line: rgba(155, 111, 214, 0.18);
-  --shadow: 0 10px 30px rgba(80, 40, 110, 0.08);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #17131b;
-    --surface: #221c28;
-    --text: #f1eaf5;
-    --muted: #b5a9bd;
-    --soft: #2a2231;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  }
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: "Poppins", Arial, sans-serif;
-  line-height: 1.7;
-}
-
-/* ---------- Menü ---------- */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 6vw;
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
-}
-
-.logo {
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-decoration: none;
-}
-
-.links a {
-  color: var(--muted);
-  text-decoration: none;
-  margin-left: 22px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color .2s;
-}
-.links a:hover { color: var(--accent); }
-
-/* ---------- Karşılama ---------- */
-.hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 88vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 20px;
-  isolation: isolate;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  opacity: .45;
-  z-index: -1;
-  animation: float 12s ease-in-out infinite;
-}
-.blob.b1 { width: 380px; height: 380px; background: var(--accent); top: -80px; left: -60px; }
-.blob.b2 { width: 320px; height: 320px; background: var(--accent-2); bottom: -60px; right: -40px; animation-delay: -6s; }
-
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30px, 20px) scale(1.08); }
-}
-
-.avatar {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  margin-bottom: 26px;
-  display: grid;
-  place-items: center;
-  font-size: 54px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: white;
-  box-shadow: var(--shadow);
-  border: 5px solid var(--surface);
-}
-
-.tagline {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 13px;
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-
-.hero h1 {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(36px, 6vw, 60px);
-  line-height: 1.15;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  max-width: 580px;
-  color: var(--muted);
-  font-size: 17px;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 34px;
-  padding: 14px 32px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  box-shadow: 0 8px 24px rgba(155, 111, 214, 0.35);
-  transition: transform .2s, box-shadow .2s;
-}
-.btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(155, 111, 214, 0.45); }
-
-/* ---------- Bölümler ---------- */
-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 90px 20px;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 50px;
-}
-.section-title span {
-  color: var(--accent);
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-.section-title h2 {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(28px, 4vw, 38px);
-  margin-top: 6px;
-}
-
-/* ---------- Kartlar ---------- */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 24px;
-}
-
-.card {
-  background: var(--surface);
-  padding: 32px 26px;
-  border-radius: 22px;
-  box-shadow: var(--shadow);
-  transition: transform .25s, box-shadow .25s;
-  border: 1px solid var(--line);
-}
-.card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(110, 60, 150, 0.15); }
-
-.icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  font-size: 26px;
-  background: var(--soft);
-  margin-bottom: 18px;
-}
-
-.card h3 { font-size: 18px; margin-bottom: 8px; }
-.card p { color: var(--muted); font-size: 14px; }
-
-/* ---------- Hakkımda ---------- */
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 40px;
-  align-items: center;
-  background: var(--soft);
-  border-radius: 28px;
-  padding: 50px;
-}
-.about-img {
-  aspect-ratio: 1;
-  border-radius: 24px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  display: grid;
-  place-items: center;
-  font-size: 80px;
-}
-.about p { color: var(--muted); font-size: 16px; }
-.about .section-title { text-align: left; margin-bottom: 16px; }
-
-/* ---------- İletişim ---------- */
-.contact { text-align: center; }
-.contact p { color: var(--muted); margin-bottom: 26px; }
-.socials { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
-.socials a {
-  padding: 12px 22px;
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--text);
-  text-decoration: none;
-  font-size: 14px;
-  box-shadow: var(--shadow);
-  transition: background .2s, color .2s;
-}
-.socials a:hover { background: var(--accent); color: white; }
-
-/* ---------- Alt bilgi ---------- */
-footer {
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 13px;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
-}
-
-/* Kaydırınca beliren animasyon */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s, transform .8s; }
-.reveal.show { opacity: 1; transform: none; }
-
-@media (max-width: 700px) {
-  nav { padding: 14px 16px; }
-  .links a { margin-left: 12px; font-size: 13px; }
-  .about { grid-template-columns: 1fr; padding: 30px; }
-  .about-img { max-width: 200px; width: 100%; margin: auto; }
-  .about .section-title, .about p { text-align: center; }
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -347,15 +94,10 @@ footer {
 </section>
 
 <footer>
-  <p>Buse · Sevgiyle hazırlandı ♡ · © 2026</p>
+  <p>Buse · Sevgiyle hazırlandı ♡ · © <span id="yil">2026</span></p>
 </footer>
 
-<script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
